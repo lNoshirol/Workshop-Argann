@@ -5,7 +5,7 @@ using UnityEngine;
 public class shotDirectionIndicator : MonoBehaviour
 {
     private LineRenderer line;
-    private GameObject pointForLaser;
+    [SerializeField] private GameObject pointForLaser;
     private void Start()
     {
         line = GetComponent<LineRenderer>();

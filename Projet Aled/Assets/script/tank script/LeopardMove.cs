@@ -14,6 +14,13 @@ public class LeopardMove : MonoBehaviour
     public GameObject turret;
     public GameObject canon;
 
+    private Transform canonTransform;
+
+    private void Start()
+    {
+        canonTransform = canon.transform;
+    }
+
     public void OnMoveTonk(InputAction.CallbackContext callbackContext)
     {
         Vector2 orientation = callbackContext.ReadValue<Vector2>();
@@ -27,6 +34,8 @@ public class LeopardMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
+
         if (mouvement.z >= 0)
         {
             transform.Translate(new Vector3(0, 0, -mouvement.z) * movementSpeed * Time.deltaTime);
@@ -43,6 +52,20 @@ public class LeopardMove : MonoBehaviour
         }
 
         turret.transform.Rotate(new Vector3(0, 0, InputAxis.x) * rotateSpeed * Time.deltaTime);
-        canon.transform.Rotate(new Vector3(InputAxis.y, 0, 0) * canonLevageSpeed * Time.deltaTime);
+
+        if (canonTransform.rotation.x >= -9 && canonTransform.rotation.x <= 20)
+        {
+            canon.transform.Rotate(new Vector3(InputAxis.y, 0, 0) * canonLevageSpeed * Time.deltaTime);
+            Debug.Log(canonTransform.rotation.eulerAngles.x);
+        }
+        else if (canonTransform.rotation.x <= -9)
+        {
+            
+        }
+        else if (canonTransform.rotation.x >= 20)
+        {
+            
+        }
+
     }
 }

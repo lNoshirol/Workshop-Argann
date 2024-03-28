@@ -9,5 +9,6 @@ public class shellMove : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(Vector3.up * shellSpeed * Time.deltaTime);
+        
     }
 }
