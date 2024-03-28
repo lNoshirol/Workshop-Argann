@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class shotDirectionIndicator : MonoBehaviour
+public class ShotDirectionIndicator : MonoBehaviour
 {
-    private LineRenderer line;
-    [SerializeField] private GameObject pointForLaser;
+    private LineRenderer _line;
+    [SerializeField] private GameObject _pointForLaser;
     private void Start()
     {
-        line = GetComponent<LineRenderer>();
+        _line = GetComponent<LineRenderer>();
     }
     void Update()
     {   
-        line.SetPosition(0, transform.position);
-        line.SetPosition(1, pointForLaser.transform.position);
+        _line.SetPosition(0, transform.position);
+        _line.SetPosition(1, _pointForLaser.transform.position);
     }
 }

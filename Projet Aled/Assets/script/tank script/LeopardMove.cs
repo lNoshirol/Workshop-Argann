@@ -3,13 +3,13 @@ using UnityEngine.InputSystem;
 
 public class LeopardMove : MonoBehaviour
 {
-    public int movementSpeed;
-    public float canonLevageSpeed;
-    public float hullRotateSpeed;
-    public float rotateSpeed;
+    [SerializeField] private int movementSpeed;
+    [SerializeField] private float canonLevageSpeed;
+    [SerializeField] private float hullRotateSpeed;
+    [SerializeField] private float rotateSpeed;
 
-    public Vector3 mouvement;
-    public Vector2 InputAxis;
+    private Vector3 mouvement;
+    private Vector2 InputAxis;
 
     public GameObject turret;
     public GameObject canon;
@@ -56,16 +56,15 @@ public class LeopardMove : MonoBehaviour
         if (canonTransform.rotation.x >= -9 && canonTransform.rotation.x <= 20)
         {
             canon.transform.Rotate(new Vector3(InputAxis.y, 0, 0) * canonLevageSpeed * Time.deltaTime);
-            Debug.Log(canonTransform.rotation.eulerAngles.x);
+            //Debug.Log(canonTransform.rotation.eulerAngles.x);
         }
         else if (canonTransform.rotation.x <= -9)
         {
-            
+            //ARGANN REPARE
         }
         else if (canonTransform.rotation.x >= 20)
         {
-            
+            //ARGANN REPARE
         }
-
     }
 }

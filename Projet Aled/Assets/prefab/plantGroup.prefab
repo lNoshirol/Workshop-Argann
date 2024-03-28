@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93524c4d46c828c4a9ae08685210eb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growSpeed: 0.1
-  maxHighGrow: 0.738
+  _growSpeed: 4
+  _maxHighGrow: 0.738
 --- !u!65 &2566215772797680696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

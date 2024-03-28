@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class buyShell : MonoBehaviour
+public class BuyShell : MonoBehaviour
 {
-    private playerMoney _playerMoney;
+    private PlayerMoney _playerMoney;
     private ShellCount _shellCount;
     [SerializeField] private GameObject _errorText;
 
     private void Start()
     {
-        _playerMoney = GetComponent<playerMoney>();
-        _playerMoney.moneyText.text = _playerMoney.amountMoney.ToString();
+        _playerMoney = GetComponent<PlayerMoney>();
+        _playerMoney.MoneyText.text = _playerMoney.AmountMoney.ToString();
         _shellCount = GetComponent<ShellCount>();
     }
 
@@ -21,24 +18,22 @@ public class buyShell : MonoBehaviour
     {
         if (callbackContext.started)
         {
-            if (_playerMoney.amountMoney >= 50)
+            if (_playerMoney.AmountMoney >= 50)
             {
                 EditMoneyAmount(-50);
-                _shellCount.shellCount++;
-                _shellCount.shellCountText.text = _shellCount.shellCount.ToString();
+                _shellCount.TonkShellCount++;
+                _shellCount.ShellCountText.text = _shellCount.TonkShellCount.ToString();
             }
             else
             {
                 _errorText.SetActive(true);
             }
-            
         }
     }
 
     public void EditMoneyAmount(int value)
     {
-        _playerMoney.amountMoney += value;
-        _playerMoney.moneyText.text = _playerMoney.amountMoney.ToString();
-        
+        _playerMoney.AmountMoney += value;
+        _playerMoney.MoneyText.text = _playerMoney.AmountMoney.ToString();
     }
 }

@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class destroyCooldown : MonoBehaviour
+public class DestroyCooldown : MonoBehaviour
 {
-    [SerializeField] float cooldown;
+    [SerializeField]
+    private float _cooldown;
 
     private void Start()
     {
-        Destroy(gameObject, cooldown);
+        Destroy(gameObject, _cooldown);
     }
 }

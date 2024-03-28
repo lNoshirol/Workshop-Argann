@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class shellMove : MonoBehaviour
+public class ShellMove : MonoBehaviour
 {
-    [SerializeField] private float shellSpeed;
+    [SerializeField] private float _shellSpeed;
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.up * shellSpeed * Time.deltaTime);
-        
+        transform.Translate(Vector3.up * _shellSpeed * Time.deltaTime);
     }
 }

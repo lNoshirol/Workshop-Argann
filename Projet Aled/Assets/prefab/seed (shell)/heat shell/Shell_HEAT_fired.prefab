@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4407b3beed349a54fb74cc09eaedc5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellSpeed: 50
+  _shellSpeed: 50
 --- !u!65 &3068864097297089630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,4 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0372b26e911c174d96dfe005db9faa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
+  _cooldown: 5

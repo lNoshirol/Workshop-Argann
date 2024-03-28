@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class harvest : MonoBehaviour
+public class Harvest : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "tonk" && transform.position.y == 0.738f)
+        if (other.CompareTag("tonk") && transform.position.y == 0.738f)
         {
-            other.GetComponent<buyShell>().EditMoneyAmount(GetComponent<plantShellValue>().value);
+            other.GetComponent<BuyShell>().EditMoneyAmount(GetComponent<PlantShellValue>().Value);
+            gameObject.transform.position -= Vector3.down * 10;
             Destroy(gameObject);
         }
     }

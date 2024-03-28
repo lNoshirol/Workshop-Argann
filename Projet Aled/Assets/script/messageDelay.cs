@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class messageDelay : MonoBehaviour
+public class MessageDelay : MonoBehaviour
 {
     private void OnEnable()
     {

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class playerMoney : MonoBehaviour
+public class PlayerMoney : MonoBehaviour
 {
-    public TextMeshProUGUI moneyText;
-    public float amountMoney;
+    [field: SerializeField] public TextMeshProUGUI MoneyText { get; set; }
+    [field: SerializeField] public float AmountMoney { get; set; }
 }

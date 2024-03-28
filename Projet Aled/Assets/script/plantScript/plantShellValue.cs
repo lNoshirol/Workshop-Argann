@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class plantShellValue : MonoBehaviour
+public class PlantShellValue : MonoBehaviour
 {
-    public int value { get; private set; }
+    public int Value { get; private set; }
 
     private void Start()
     {
-        value = Random.Range(50, 150);
+        Value = Random.Range(50, 150);
     }
 }

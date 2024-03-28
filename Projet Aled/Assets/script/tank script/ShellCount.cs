@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class ShellCount : MonoBehaviour
 {
-    public TextMeshProUGUI shellCountText;
-    public int shellCount;
+    [field : SerializeField] public TextMeshProUGUI ShellCountText {  get; set; }
+    [field: SerializeField] public int TonkShellCount {  get; set; }
 }

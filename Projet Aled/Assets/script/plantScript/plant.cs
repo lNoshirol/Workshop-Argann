@@ -1,30 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class plant : MonoBehaviour
+public class Plant : MonoBehaviour
 {
-    [SerializeField] private GameObject thePlant;
-    [SerializeField] private bool isPlanted;
+    [SerializeField] private GameObject _thePlant;
+    [SerializeField] private bool _isPlanted;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "shellGroup" && !isPlanted)
+        if (other.CompareTag("shellGroup") && !_isPlanted)
         {
-            isPlanted = true;
+            _isPlanted = true;
         }
-        else if (other.gameObject.tag == "tankShell" && !isPlanted)
+        else if (other.CompareTag("tankShell") && !_isPlanted)
         {
-            GameObject newPlant = Instantiate(thePlant);
+            GameObject newPlant = Instantiate(_thePlant);
             newPlant.transform.position = new Vector3(transform.position.x, newPlant.transform.position.y, transform.position.z);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "shellGroup")
+        if (other.CompareTag("shellGroup"))
         {
-            isPlanted = false;
+            _isPlanted = false;
         }
     }
 }

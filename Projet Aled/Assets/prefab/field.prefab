@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b4814c1d00ce34699b26051dd2f4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlant: {fileID: 4618682189943042847, guid: c2a28e6540efe484085ef3e1ecb2cee4,
+  _thePlant: {fileID: 4618682189943042847, guid: c2a28e6540efe484085ef3e1ecb2cee4,
     type: 3}
-  isPlanted: 0
+  _isPlanted: 0
 --- !u!54 &4895189452178720791
 Rigidbody:
   m_ObjectHideFlags: 0
