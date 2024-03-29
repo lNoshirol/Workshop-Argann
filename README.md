@@ -8,6 +8,7 @@ controle :
     fleche gauche/fleche droite : faire tourner la tourelle
     tirer : espace
     acheter : E
+    
   manette :
     stick gauche : avancer/reculer + tourner sur soi même
     stick droit : axe vertical du canon + faire la tourelle
