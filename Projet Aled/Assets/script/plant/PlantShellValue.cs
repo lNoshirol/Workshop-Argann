@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// value of the plant
+/// </summary>
 public class PlantShellValue : MonoBehaviour
 {
     /// <summary>

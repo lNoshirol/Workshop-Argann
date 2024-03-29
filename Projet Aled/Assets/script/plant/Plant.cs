@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// plant a seed in a field
+/// </summary>
 public class Plant : MonoBehaviour
 {
     /// <summary>

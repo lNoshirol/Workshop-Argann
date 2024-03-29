@@ -6,14 +6,15 @@ using UnityEngine;
 public class ShotDirectionIndicator : MonoBehaviour
 {
     /// <summary>
+    /// empty GameObject with the position
+    /// </summary>
+    [SerializeField] private GameObject _pointForLaser;
+    
+    /// <summary>
     /// LineRanderer component
     /// </summary>
     private LineRenderer _line;
 
-    /// <summary>
-    /// empty GameObject with the position
-    /// </summary>
-    [SerializeField] private GameObject _pointForLaser;
     private void Start()
     {
         _line = GetComponent<LineRenderer>();

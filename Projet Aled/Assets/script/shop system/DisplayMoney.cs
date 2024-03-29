@@ -6,7 +6,6 @@ using UnityEngine;
 /// </summary>
 public class DisplayMoney : MonoBehaviour
 {
-
     /// <summary>
     /// text to display player money
     /// </summary>

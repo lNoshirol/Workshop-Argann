@@ -7,6 +7,11 @@ using UnityEngine.InputSystem;
 public class BuyShell : MonoBehaviour
 {
     /// <summary>
+    /// error text
+    /// </summary>
+    [SerializeField] private GameObject _errorText;
+
+    /// <summary>
     /// player money
     /// </summary>
     private PlayerMoney _playerMoney;
@@ -16,10 +21,6 @@ public class BuyShell : MonoBehaviour
     /// </summary>
     private ShellCount _shellCount;
 
-    /// <summary>
-    /// error text
-    /// </summary>
-    [SerializeField] private GameObject _errorText;
 
     private void Start()
     {
