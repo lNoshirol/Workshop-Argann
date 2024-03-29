@@ -1,70 +1,88 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// make the player move
+/// </summary>
 public class LeopardMove : MonoBehaviour
 {
-    [SerializeField] private int movementSpeed;
-    [SerializeField] private float canonLevageSpeed;
-    [SerializeField] private float hullRotateSpeed;
-    [SerializeField] private float rotateSpeed;
+    /// <summary>
+    /// movement speed
+    /// </summary>
+    [SerializeField] private int _movementSpeed;
 
-    private Vector3 mouvement;
-    private Vector2 InputAxis;
+    /// <summary>
+    /// vertical guidance speed
+    /// </summary>
+    [SerializeField] private float _canonLevageSpeed;
 
-    public GameObject turret;
-    public GameObject canon;
+    /// <summary>
+    /// hull rotation speed
+    /// </summary>
+    [SerializeField] private float _hullRotateSpeed;
 
-    private Transform canonTransform;
+    /// <summary>
+    /// turret rotation speed
+    /// </summary>
+    [SerializeField] private float _turretRotateSpeed;
 
-    private void Start()
-    {
-        canonTransform = canon.transform;
-    }
+    /// <summary>
+    /// left stick vector
+    /// </summary>
+    private Vector3 _mouvement;
 
+    /// <summary>
+    /// right stick vector
+    /// </summary>
+    private Vector2 _inputAxis;
+
+    /// <summary>
+    /// turret object
+    /// </summary>
+    [SerializeField] private GameObject _turret;
+
+    /// <summary>
+    /// canon object
+    /// </summary>
+    [SerializeField] private GameObject _canon;
+
+    /// <summary>
+    /// set movement vector at left stick vector
+    /// </summary>
+    /// <param name="callbackContext"></param>
     public void OnMoveTonk(InputAction.CallbackContext callbackContext)
     {
         Vector2 orientation = callbackContext.ReadValue<Vector2>();
-        mouvement = new Vector3(orientation.x, 0, orientation.y);
+        _mouvement = new Vector3(orientation.x, 0, orientation.y);
     }
 
+    /// <summary>
+    ///  set inputAxis vector at left stick vector
+    /// </summary>
+    /// <param name="callbackContext"></param>
     public void OnRotateTourelle(InputAction.CallbackContext callbackContext)
     {
-        InputAxis = callbackContext.ReadValue<Vector2>();
+        _inputAxis = callbackContext.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
+        //move the player on his z axis
+        transform.Translate(new Vector3(0, 0, -_mouvement.z) * _movementSpeed * Time.deltaTime);
+
+        //rotate the hull 
+        transform.Rotate(new Vector3(0, _mouvement.x, 0) * _hullRotateSpeed * Time.deltaTime);
+
+        //make the turrete don't rotate with the hull
+        if (_mouvement != Vector3.zero && _inputAxis == Vector2.zero)
+        {
+            _turret.transform.Rotate(new Vector3(0, 0, -_mouvement.x) * _hullRotateSpeed * Time.deltaTime);
+        }
         
-
-        if (mouvement.z >= 0)
-        {
-            transform.Translate(new Vector3(0, 0, -mouvement.z) * movementSpeed * Time.deltaTime);
-        }
-        else if (mouvement.z < 0)
-        {
-            transform.Translate(new Vector3(0, 0, -mouvement.z) * movementSpeed * Time.deltaTime);
-        }
-
-        transform.Rotate(new Vector3(0, mouvement.x, 0) * hullRotateSpeed * Time.deltaTime);
-        if (mouvement != Vector3.zero && InputAxis == Vector2.zero)
-        {
-            turret.transform.Rotate(new Vector3(0, 0, -mouvement.x) * hullRotateSpeed * Time.deltaTime);
-        }
-
-        turret.transform.Rotate(new Vector3(0, 0, InputAxis.x) * rotateSpeed * Time.deltaTime);
-
-        if (canonTransform.rotation.x >= -9 && canonTransform.rotation.x <= 20)
-        {
-            canon.transform.Rotate(new Vector3(InputAxis.y, 0, 0) * canonLevageSpeed * Time.deltaTime);
-            //Debug.Log(canonTransform.rotation.eulerAngles.x);
-        }
-        else if (canonTransform.rotation.x <= -9)
-        {
-            //ARGANN REPARE
-        }
-        else if (canonTransform.rotation.x >= 20)
-        {
-            //ARGANN REPARE
-        }
+        //rotate the turret
+        _turret.transform.Rotate(new Vector3(0, 0, _inputAxis.x) * _turretRotateSpeed * Time.deltaTime);
+        
+        //increase or decrease canon angle
+        _canon.transform.Rotate(new Vector3(_inputAxis.y, 0, 0) * _canonLevageSpeed * Time.deltaTime);
     }
 }

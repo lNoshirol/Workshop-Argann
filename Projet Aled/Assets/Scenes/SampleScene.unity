@@ -320,11 +320,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: model
       objectReference: {fileID: 0}
-    - target: {fileID: 6018716586301173419, guid: 7cba914935fa2d34b9eeab2980c86143,
+    - target: {fileID: 1111652324733093653, guid: 7cba914935fa2d34b9eeab2980c86143,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2ec8ab76e4750374588901bc39c2d394, type: 2}
+    - target: {fileID: 6018716586301173419, guid: 7cba914935fa2d34b9eeab2980c86143,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 56432b795b48c7e45b04ed6381426d24, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1082,7 +1087,7 @@ PrefabInstance:
     - target: {fileID: 810339241526251799, guid: 7835650244880634688b4b9c76c65de0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4725153
+      value: -36.83
       objectReference: {fileID: 0}
     - target: {fileID: 810339241526251799, guid: 7835650244880634688b4b9c76c65de0,
         type: 3}
@@ -1124,6 +1129,31 @@ PrefabInstance:
       propertyPath: <MoneyText>k__BackingField
       value: 
       objectReference: {fileID: 2094380767}
+    - target: {fileID: 1624981722180281562, guid: 7835650244880634688b4b9c76c65de0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624981722180281562, guid: 7835650244880634688b4b9c76c65de0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624981722180281562, guid: 7835650244880634688b4b9c76c65de0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624981722180281562, guid: 7835650244880634688b4b9c76c65de0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624981722180281562, guid: 7835650244880634688b4b9c76c65de0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5323620100251829190, guid: 7835650244880634688b4b9c76c65de0,
         type: 3}
       propertyPath: <ShellCountText>k__BackingField
@@ -1134,6 +1164,11 @@ PrefabInstance:
       propertyPath: _errorText
       value: 
       objectReference: {fileID: 1556418853}
+    - target: {fileID: 6701645384771690337, guid: 7835650244880634688b4b9c76c65de0,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[37]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1286,7 +1321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vous n'avez pas assez d'argent !
+  m_text: You don't have enough money !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

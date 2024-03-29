@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlantShellValue : MonoBehaviour
 {
+    /// <summary>
+    /// Amount of money given by the plant
+    /// </summary>
     public int Value { get; private set; }
 
     private void Start()
