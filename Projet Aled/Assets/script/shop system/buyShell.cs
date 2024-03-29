@@ -24,7 +24,6 @@ public class BuyShell : MonoBehaviour
     private void Start()
     {
         _playerMoney = GetComponent<PlayerMoney>();
-        _playerMoney.MoneyText.text = _playerMoney.AmountMoney.ToString();
         _shellCount = GetComponent<ShellCount>();
     }
 
@@ -40,24 +39,13 @@ public class BuyShell : MonoBehaviour
             //check if player have enough money, buy a shell if yes, show text error else
             if (_playerMoney.AmountMoney >= 50)
             {
-                EditMoneyAmount(-50);
-                _shellCount.TonkShellCount++;
-                _shellCount.ShellCountText.text = _shellCount.TonkShellCount.ToString();
+                _playerMoney.EditMoneyAmount(-50);
+                _shellCount.EditShellCount(1);
             }
             else
             {
                 _errorText.SetActive(true);
             }
         }
-    }
-
-    /// <summary>
-    /// change the ammount of player money and displays it
-    /// </summary>
-    /// <param name="value">ammount of money to add</param>
-    public void EditMoneyAmount(int value)
-    {
-        _playerMoney.AmountMoney += value;
-        _playerMoney.MoneyText.text = _playerMoney.AmountMoney.ToString();
     }
 }

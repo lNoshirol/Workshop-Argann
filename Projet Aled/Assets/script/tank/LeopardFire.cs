@@ -22,25 +22,19 @@ public class LeopardFire : MonoBehaviour
     private void Start()
     {
         _shellCount = GetComponent<ShellCount>();
-        _shellCount.ShellCountText.text = _shellCount.TonkShellCount.ToString();
     }
 
     public void OnFire(InputAction.CallbackContext callbackContext)
     {
         //fire a shell if player press the button and if player have enough shell
-        if (callbackContext.started)
-        {
-            if (_shellCount.TonkShellCount > 0)
-            {
-                //create shell in the scene
-                GameObject _newShell = Instantiate(_shell);
-                _newShell.transform.position = _shellSpawnLocation.transform.position;
-                _newShell.transform.rotation = _shellSpawnLocation.transform.rotation;
+        if (!callbackContext.started || _shellCount.TonkShellCount <= 0) return;
 
-                //update shell count
-                _shellCount.TonkShellCount--;
-                _shellCount.ShellCountText.text = _shellCount.TonkShellCount.ToString();
-            }
-        }
+        //create shell in the scene
+        GameObject _newShell = Instantiate(_shell);
+        _newShell.transform.position = _shellSpawnLocation.transform.position;
+        _newShell.transform.rotation = _shellSpawnLocation.transform.rotation;
+
+        //update shell count
+        _shellCount.EditShellCount(-1);
     }
 }

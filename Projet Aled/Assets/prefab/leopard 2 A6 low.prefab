@@ -12,10 +12,12 @@ GameObject:
   - component: {fileID: 9123461560773295862}
   - component: {fileID: 8115971057530862591}
   - component: {fileID: 5323620100251829190}
-  - component: {fileID: 69450973423994721}
-  - component: {fileID: 2335844314634552224}
   - component: {fileID: 924253297904552259}
   - component: {fileID: 6449147658606173930}
+  - component: {fileID: 8694074485387677672}
+  - component: {fileID: 7563616818127868944}
+  - component: {fileID: 69450973423994721}
+  - component: {fileID: 2335844314634552224}
   m_Layer: 0
   m_Name: leopard 2 A6 low
   m_TagString: tonk
@@ -86,8 +88,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87157c892bc3ddc4db66fe48f3a957d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ShellCountText>k__BackingField: {fileID: 0}
   <TonkShellCount>k__BackingField: 5
+--- !u!114 &924253297904552259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32993679795489709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6959ffb0d50ede448ffa3d96021b1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <AmountMoney>k__BackingField: 200
+--- !u!114 &6449147658606173930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32993679795489709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3465c59dbb5347a4c9f9d01640b3c163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _errorText: {fileID: 0}
+--- !u!114 &8694074485387677672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32993679795489709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d469efab50e94134b847ddbbdac574e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moneyText: {fileID: 0}
+--- !u!114 &7563616818127868944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32993679795489709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b8680fa9b1ade4d8350bef477df5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shellCountText: {fileID: 0}
 --- !u!65 &69450973423994721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -136,33 +189,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &924253297904552259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32993679795489709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6959ffb0d50ede448ffa3d96021b1b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MoneyText>k__BackingField: {fileID: 0}
-  <AmountMoney>k__BackingField: 200
---- !u!114 &6449147658606173930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32993679795489709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3465c59dbb5347a4c9f9d01640b3c163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _errorText: {fileID: 0}
 --- !u!1 &992667366490376086
 GameObject:
   m_ObjectHideFlags: 0

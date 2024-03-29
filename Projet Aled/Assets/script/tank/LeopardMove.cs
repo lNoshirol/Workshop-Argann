@@ -27,16 +27,6 @@ public class LeopardMove : MonoBehaviour
     [SerializeField] private float _turretRotateSpeed;
 
     /// <summary>
-    /// left stick vector
-    /// </summary>
-    private Vector3 _mouvement;
-
-    /// <summary>
-    /// right stick vector
-    /// </summary>
-    private Vector2 _inputAxis;
-
-    /// <summary>
     /// turret object
     /// </summary>
     [SerializeField] private GameObject _turret;
@@ -45,6 +35,16 @@ public class LeopardMove : MonoBehaviour
     /// canon object
     /// </summary>
     [SerializeField] private GameObject _canon;
+
+    /// <summary>
+    /// left stick vector
+    /// </summary>
+    private Vector3 _mouvement;
+
+    /// <summary>
+    /// right stick vector
+    /// </summary>
+    private Vector2 _inputAxis;
 
     /// <summary>
     /// set movement vector at left stick vector
@@ -68,21 +68,21 @@ public class LeopardMove : MonoBehaviour
     private void FixedUpdate()
     {
         //move the player on his z axis
-        transform.Translate(new Vector3(0, 0, -_mouvement.z) * _movementSpeed * Time.deltaTime);
+        transform.Translate(_movementSpeed * Time.deltaTime * new Vector3(0, 0, -_mouvement.z));
 
         //rotate the hull 
-        transform.Rotate(new Vector3(0, _mouvement.x, 0) * _hullRotateSpeed * Time.deltaTime);
+        transform.Rotate(_hullRotateSpeed * Time.deltaTime * new Vector3(0, _mouvement.x, 0));
 
         //make the turrete don't rotate with the hull
         if (_mouvement != Vector3.zero && _inputAxis == Vector2.zero)
         {
-            _turret.transform.Rotate(new Vector3(0, 0, -_mouvement.x) * _hullRotateSpeed * Time.deltaTime);
+            _turret.transform.Rotate(_hullRotateSpeed * Time.deltaTime * new Vector3(0, 0, -_mouvement.x));
         }
         
         //rotate the turret
-        _turret.transform.Rotate(new Vector3(0, 0, _inputAxis.x) * _turretRotateSpeed * Time.deltaTime);
+        _turret.transform.Rotate(_turretRotateSpeed * Time.deltaTime * new Vector3(0, 0, _inputAxis.x));
         
         //increase or decrease canon angle
-        _canon.transform.Rotate(new Vector3(_inputAxis.y, 0, 0) * _canonLevageSpeed * Time.deltaTime);
+        _canon.transform.Rotate(_canonLevageSpeed * Time.deltaTime * new Vector3(_inputAxis.y, 0, 0));
     }
 }
